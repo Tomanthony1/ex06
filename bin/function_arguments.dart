@@ -33,9 +33,9 @@ numberdays (d1, m1,
                  'juillet', 'août',
                  'septembre', 'octobre', 
                  'novembre', 'décembre'];
-  int days_in_a_month = 30;
+  int days_in_a_month = 30; //On suppose qu'il y a 30 jours dans un mois
   int months_in_a_year = 12;
-  int days_in_a_year = 360;
+  int days_in_a_year = 360; //On suppose qu'il y a 360 jours dans l'année
   int days_between_two_dates = 0;
   int t = list.indexOf ('$m2') -
           list.indexOf ('$m1') - 1;
@@ -109,7 +109,7 @@ listofnames (x) {
   var list_below_8 = new List ();
   var list_over_8 = new List ();
   var list_equal_8 = new List ();
-  for (var i=0; i<x.length;i++) {
+  for (var i = 0; i < x.length; i++) {
     int lx = x[i].length;
     if (lx < 8) {
       list_below_8.add(x[i]);

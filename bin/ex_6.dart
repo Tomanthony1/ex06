@@ -111,7 +111,7 @@ listofnames (x) {
   var list_below_8 = new List ();
   var list_over_8 = new List ();
   var list_equal_8 = new List ();
-  for (var i=0; i<x.length;i++) {
+  for (var i = 0; i < x.length; i++) {
     int lx = x[i].length;
     if (lx < 8) {
       list_below_8.add(x[i]);
@@ -158,7 +158,6 @@ listplayershome (lp) {
 */
 
 //1.
-
 void ex_1(){
   var p = 'laval';
   String fpal = palind(p);
@@ -174,9 +173,9 @@ void ex_2(){
   int days2 = 23;
   var month2 = 'novembre';
   int year2 = 1998;
-  var number_of_days_between_two_dates=numberdays(days1, month1,
-                                                  year1, days2,
-                                                  month2, year2);
+  var number_of_days_between_two_dates = numberdays(days1, month1,
+                                                    year1, days2,
+                                                    month2, year2);
   print('2. Le nombre de jours entre le \n   $days1 $month1 $year1 et le \n   $days2 $month2 $year2 est de : \n   $number_of_days_between_two_dates jours.\n');
 }
 
