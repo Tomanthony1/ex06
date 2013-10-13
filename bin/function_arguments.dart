@@ -1,7 +1,6 @@
-//Version en un file
+part of define_functions;
 
 //1.
-/*
 palind (y) {
   var answer = '';
   var l_un = 0;
@@ -9,7 +8,7 @@ palind (y) {
   if (l%2 == 0) { //si le mot est de longueur paire
     l_un = l / 2;
   }
-  if (l%2 != 0) { //si le mot est de longueur impaire 
+  if (l%2 != 0) { //si le mot est de longueur impaire
     l_un = (l - 1) / 2;
   }
   for (var i = 0; i < l_un; i++) {
@@ -22,7 +21,6 @@ palind (y) {
   }
   return answer;
 }
-*/
 
 //2.  
 
@@ -65,19 +63,19 @@ convert (n) {
                 'C+' : '74<n<77,49', 'C' : '70,5<n<73,99', 
                 'C-' : '67<n<69,99', 'D+' : '63,5<n<66,99', 
                 'D' : '60<n<63,49', 'E' : '0<n<59,99' };
-  if (95 < n && n < 100){
+  if (95 < n && n < 100) {
     k = 0;
   }
   if (91.5 < n && n < 94.99) {
     k = 1;
   }
-  if (88 < n && n < 91.49){
+  if (88 < n && n < 91.49) {
     k = 2;
   }
   if (84.5 < n && n < 87.99) {
     k = 3;
   }
-  if (81 < n && n < 84.49){
+  if (81 < n && n < 84.49) {
     k = 4;
   }
   if (77.5 < n && n < 80.99) {
@@ -104,7 +102,7 @@ convert (n) {
   var list = grades.keys.toList();
   var results = list [k];
   return results;
-  }
+}
 
 //4.
 listofnames (x) {
@@ -128,8 +126,7 @@ listofnames (x) {
 }
 
 //5.
-/*
-listplayershome (lp) {
+/*listplayershome (lp) {
   var setb = new Set();
   var setm = new Set();
   var setp = new Set();
@@ -156,66 +153,3 @@ listplayershome (lp) {
   return map;
 }
 */
-
-//1.
-
-void ex_1(){
-  var p = 'laval';
-  String fpal = palind(p);
-  print('1. Le résultat de notre test, qui est de savoir si $p est un palindrôme, est : $fpal');
-}
-
-
-//2.
-void ex_2(){
-  int days1 = 11; //Exemple
-  var month1 = 'février';
-  int year1 = 1992;
-  int days2 = 23;
-  var month2 = 'novembre';
-  int year2 = 1998;
-  var number_of_days_between_two_dates=numberdays(days1, month1,
-                                                  year1, days2,
-                                                  month2, year2);
-  print('2. Le nombre de jours entre le \n   $days1 $month1 $year1 et le \n   $days2 $month2 $year2 est de : \n   $number_of_days_between_two_dates jours.\n');
-}
-
-//3.
-void ex_3(){
-  var grade = 75.7; //Exemple
-  String return_grade_in_letters = convert(grade);
-  print('3. La note en lettre de $grade \n   est de : $return_grade_in_letters.\n');
-}
-
-//4.
-void ex_4(){
-  var listnames = ['Tom', 'Gwenaell', 
-                   'Pilloud', 'Alexandre', 
-                   'Ericsonn'];
-  var list = listofnames(listnames);
-  print('4. $list');
-}
-  
-//5.
-
-void ex_5(){
-    var list_of_players = [{"Xavi", "Barcelone"}, 
-                           {"Olivier Giroud", "Arsenal"}, 
-                           {"Messi", "Barcelone"}, 
-                           {"Ibrahimovic", "PSG"}, 
-                           {"Nani", "Manchester"}]; 
-    var listp = listplayershome(list_of_players);
-    print('5. La liste est : $listp');
-}
-
-void main(){
-  print('SIO 2109\n\nTom Anthony Olesen\n\nExercice 06\n\n');
-  //ex_1();
-  ex_2();
-  ex_3();
-  ex_4();
-  //ex_5();
-}
-
-
-
