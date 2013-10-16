@@ -110,7 +110,9 @@ listofnames (x) {
       list_equal_8.add(x[i]);
     }
   }
-  var results = 'La liste < 8 : $list_below_8\n   La liste > 8 : $list_over_8\n   La liste = 8 : $list_equal_8';
+  var results = '''La liste < 8 : $list_below_8
+   La liste > 8 : $list_over_8
+   La liste = 8 : $list_equal_8''';
   return results;
 }
 
@@ -151,7 +153,9 @@ listplayershome (lp) {
 void ex_1 () {
   var p = 'laval';
   bool fpal = palind (p);
-  print('1. Le résultat de notre test,\n   qui est de savoir si $p\n   est un palindrôme, est : $fpal.\n');
+  print('''1. Le résultat de notre test,
+   qui est de savoir si $p
+   est un palindrôme, est : $fpal.\n''');
 }
 
 //2.
@@ -165,14 +169,18 @@ void ex_2 () {
   var number_of_days_between_two_dates = numberdays(days1, month1,
                                                     year1, days2,
                                                     month2, year2);
-  print('2. Le nombre de jours entre le \n   $days1 $month1 $year1 et le \n   $days2 $month2 $year2 est de : \n   $number_of_days_between_two_dates jours.\n');
+  print('''2. Le nombre de jours entre le
+   $days1 $month1 $year1 et le
+   $days2 $month2 $year2 est de :
+   $number_of_days_between_two_dates jours.\n''');
 }
 
 //3.
 void ex_3 () {
   num grade = 75.7; //Exemple
   String return_grade_in_letters = convert (grade);
-  print('3. La note en lettre de $grade \n   est de : $return_grade_in_letters.\n');
+  print('''3. La note en lettre de $grade 
+   est de : $return_grade_in_letters.\n''');
 }
 
 //4.

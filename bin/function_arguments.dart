@@ -110,7 +110,9 @@ listofnames (x) {
       list_equal_8.add(x[i]);
     }
   }
-  var results = 'La liste < 8 : $list_below_8\n   La liste > 8 : $list_over_8\n   La liste = 8 : $list_equal_8';
+  var results = '''La liste < 8 : $list_below_8
+   La liste > 8 : $list_over_8
+   La liste = 8 : $list_equal_8''';
   return results;
 }
 
