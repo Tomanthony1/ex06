@@ -1,50 +1,37 @@
 //Version en un file
 
 //1.
-/*
-palind (y) {
+bool palind (y) {
   var answer = '';
-  var l_un = 0;
-  int l = y.length;
-  if (l%2 == 0) { //si le mot est de longueur paire
-    l_un = l / 2;
+  int l = y.length-1;
+  for (var i = 0; i < l; i++) {
+    if (y[i] != y[l-i]) {
+      return false;
+    }
   }
-  if (l%2 != 0) { //si le mot est de longueur impaire 
-    l_un = (l - 1) / 2;
-  }
-  for (var i = 0; i < l_un; i++) {
-    if (y.elementAt (i) == 
-       y.elementAt (l - i - 1)) {
-      answer = 'Oui';
-    } else {
-      answer = 'Non';
-      }
-  }
-  return answer;
+  return true;
 }
-*/
 
 //2.  
-
 numberdays (d1, m1, 
            y1, d2, 
            m2, y2) {
   var list = ['janvier', 'février', 
-                 'mars', 'avril', 
-                 'mai', 'juin', 
-                 'juillet', 'août',
-                 'septembre', 'octobre', 
-                 'novembre', 'décembre'];
+              'mars', 'avril', 
+              'mai', 'juin', 
+              'juillet', 'août',
+              'septembre', 'octobre', 
+              'novembre', 'décembre'];
   int days_in_a_month = 30;
   int months_in_a_year = 12;
   int days_in_a_year = 360;
   int days_between_two_dates = 0;
-  int t = list.indexOf ('$m2') -
-          list.indexOf ('$m1') - 1;
+  int t = list.indexOf('$m2') -
+          list.indexOf('$m1') - 1;
   int o = (y2 - y1 - 1) * months_in_a_year;
   int z = months_in_a_year - 
-          list.indexOf ('$m1') - 
-          1 + list.indexOf ('$m2') + o;
+          list.indexOf('$m1') - 
+          1 + list.indexOf('$m2') + o;
   if (y1 == y2) {
     days_between_two_dates = t * days_in_a_month +
                              d2 + days_in_a_month - d1;
@@ -65,7 +52,7 @@ convert (n) {
                 'C+' : '74<n<77,49', 'C' : '70,5<n<73,99', 
                 'C-' : '67<n<69,99', 'D+' : '63,5<n<66,99', 
                 'D' : '60<n<63,49', 'E' : '0<n<59,99' };
-  if (95 < n && n < 100){
+  if (95 < n && n < 100) {
     k = 0;
   }
   if (91.5 < n && n < 94.99) {
@@ -102,7 +89,7 @@ convert (n) {
     k = 11;
   }
   var list = grades.keys.toList();
-  var results = list [k];
+  var results = list[k];
   return results;
   }
 
@@ -128,45 +115,47 @@ listofnames (x) {
 }
 
 //5.
-/*
 listplayershome (lp) {
   var setb = new Set();
   var setm = new Set();
   var setp = new Set();
   var seta = new Set();
-  var map = {'Barcelone' : '', 'Manchester' : '', 'PSG' : ''};
+  var t = lp.values; //valeurs de la liste de joueurs
+  var z = t.toList();
+  var d = lp.keys; //clés de la liste de joueurs
+  var f = d.toList();
+  var map = new Map();
   for (var i = 0; i < lp.length; i++) {
-    if (lp[i].contains('Barcelone') {
-      setb.add(lp[i]);
+    if (z[i] == ('Barcelone')) {
+      setb.add (f[i]);
     }
-    if (lp[i].contains('Manchester') {
-      setm.add(lp[i]);
+    if (z[i] == ('Manchester')) {
+      setm.add (f[i]);
     }
-    if (lp[i].contains('PSG') {
-      setp.add(lp[i]);
+    if (z[i] == ('PSG')) {
+      setp.add (f[i]);
     }
-    if (lp[i].contains('Arsenal') {
-      seta.add(lp[i]);
+    if (z[i] == ('Arsenal')) {
+      seta.add(f[i]);
     }
   }
-  map['Barcelone']=setb;
-  map['Manchester']=setm;
-  map['PSG']=setp;
-  map['Arsenal']=seta;
+  map['Barcelone '] = setb;
+  map['\n    Manchester '] = setm;
+  map['\n    PSG '] = setp;
+  map['\n    Arsenal '] = seta;
   return map;
 }
-*/
+
 
 //1.
-void ex_1(){
+void ex_1 () {
   var p = 'laval';
-  String fpal = palind(p);
-  print('1. Le résultat de notre test, qui est de savoir si $p est un palindrôme, est : $fpal');
+  bool fpal = palind (p);
+  print('1. Le résultat de notre test,\n   qui est de savoir si $p\n   est un palindrôme, est : $fpal.\n');
 }
 
-
 //2.
-void ex_2(){
+void ex_2 () {
   int days1 = 11; //Exemple
   var month1 = 'février';
   int year1 = 1992;
@@ -180,40 +169,39 @@ void ex_2(){
 }
 
 //3.
-void ex_3(){
-  var grade = 75.7; //Exemple
-  String return_grade_in_letters = convert(grade);
+void ex_3 () {
+  num grade = 75.7; //Exemple
+  String return_grade_in_letters = convert (grade);
   print('3. La note en lettre de $grade \n   est de : $return_grade_in_letters.\n');
 }
 
 //4.
-void ex_4(){
+void ex_4 () {
   var listnames = ['Tom', 'Gwenaell', 
                    'Pilloud', 'Alexandre', 
                    'Ericsonn'];
-  var list = listofnames(listnames);
-  print('4. $list');
+  String list = listofnames (listnames);
+  print('4. $list.\n');
 }
   
 //5.
-
-void ex_5(){
-    var list_of_players = [{"Xavi", "Barcelone"}, 
-                           {"Olivier Giroud", "Arsenal"}, 
-                           {"Messi", "Barcelone"}, 
-                           {"Ibrahimovic", "PSG"}, 
-                           {"Nani", "Manchester"}]; 
-    var listp = listplayershome(list_of_players);
-    print('5. La liste est : $listp');
+void ex_5 () {
+  var list_of_players = {"Xavi" : "Barcelone", 
+                           "Olivier Giroud" : "Arsenal", 
+                           "Messi" : "Barcelone", 
+                           "Ibrahimovic" : "PSG", 
+                           "Nani" : "Manchester"}; 
+  var listp = listplayershome(list_of_players);
+  print('5. La liste est : \n   $listp');
 }
 
-void main(){
+void main () {
   print('SIO 2109\n\nTom Anthony Olesen\n\nExercice 06\n\n');
-  //ex_1();
-  ex_2();
-  ex_3();
-  ex_4();
-  //ex_5();
+  ex_1 ();
+  ex_2 ();
+  ex_3 ();
+  ex_4 ();
+  ex_5 ();
 }
 
 

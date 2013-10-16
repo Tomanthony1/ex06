@@ -1,48 +1,37 @@
 part of define_functions;
 
 //1.
-palind (y) {
+bool palind (y) {
   var answer = '';
-  var l_un = 0;
-  int l = y.length;
-  if (l%2 == 0) { //si le mot est de longueur paire
-    l_un = l / 2;
+  int l = y.length-1;
+  for (var i = 0; i < l; i++) {
+    if (y[i] != y[l-i]) {
+      return false;
+    }
   }
-  if (l%2 != 0) { //si le mot est de longueur impaire
-    l_un = (l - 1) / 2;
-  }
-  for (var i = 0; i < l_un; i++) {
-    if (y.elementAt (i) == 
-       y.elementAt (l - i - 1)) {
-      answer = 'Oui';
-    } else {
-      answer = 'Non';
-      }
-  }
-  return answer;
+  return true;
 }
 
 //2.  
-
 numberdays (d1, m1, 
-           y1, d2, 
-           m2, y2) {
+            y1, d2, 
+            m2, y2) {
   var list = ['janvier', 'février', 
-                 'mars', 'avril', 
-                 'mai', 'juin', 
-                 'juillet', 'août',
-                 'septembre', 'octobre', 
-                 'novembre', 'décembre'];
-  int days_in_a_month = 30; //On suppose qu'il y a 30 jours dans un mois
+              'mars', 'avril', 
+              'mai', 'juin', 
+              'juillet', 'août',
+              'septembre', 'octobre', 
+              'novembre', 'décembre'];
+  int days_in_a_month = 30;
   int months_in_a_year = 12;
-  int days_in_a_year = 360; //On suppose qu'il y a 360 jours dans l'année
+  int days_in_a_year = 360;
   int days_between_two_dates = 0;
-  int t = list.indexOf ('$m2') -
-          list.indexOf ('$m1') - 1;
+  int t = list.indexOf('$m2') -
+          list.indexOf('$m1') - 1;
   int o = (y2 - y1 - 1) * months_in_a_year;
   int z = months_in_a_year - 
-          list.indexOf ('$m1') - 
-          1 + list.indexOf ('$m2') + o;
+          list.indexOf('$m1') - 
+          1 + list.indexOf('$m2') + o;
   if (y1 == y2) {
     days_between_two_dates = t * days_in_a_month +
                              d2 + days_in_a_month - d1;
@@ -69,13 +58,13 @@ convert (n) {
   if (91.5 < n && n < 94.99) {
     k = 1;
   }
-  if (88 < n && n < 91.49) {
+  if (88 < n && n < 91.49){
     k = 2;
   }
   if (84.5 < n && n < 87.99) {
     k = 3;
   }
-  if (81 < n && n < 84.49) {
+  if (81 < n && n < 84.49){
     k = 4;
   }
   if (77.5 < n && n < 80.99) {
@@ -100,15 +89,15 @@ convert (n) {
     k = 11;
   }
   var list = grades.keys.toList();
-  var results = list [k];
+  var results = list[k];
   return results;
-}
+  }
 
 //4.
 listofnames (x) {
-  var list_below_8 = new List ();
-  var list_over_8 = new List ();
-  var list_equal_8 = new List ();
+  var list_below_8 = new List();
+  var list_over_8 = new List();
+  var list_equal_8 = new List();
   for (var i = 0; i < x.length; i++) {
     int lx = x[i].length;
     if (lx < 8) {
@@ -126,30 +115,33 @@ listofnames (x) {
 }
 
 //5.
-/*listplayershome (lp) {
+listplayershome (lp) {
   var setb = new Set();
   var setm = new Set();
   var setp = new Set();
   var seta = new Set();
-  var map = {'Barcelone' : '', 'Manchester' : '', 'PSG' : ''};
+  var t = lp.values; //valeurs de la liste de joueurs
+  var z = t.toList();
+  var d = lp.keys; //clés de la liste de joueurs
+  var f = d.toList();
+  var map = new Map();
   for (var i = 0; i < lp.length; i++) {
-    if (lp[i].contains('Barcelone') {
-      setb.add(lp[i]);
+    if (z[i] == ('Barcelone')) {
+      setb.add (f [i]);
     }
-    if (lp[i].contains('Manchester') {
-      setm.add(lp[i]);
+    if (z[i] == ('Manchester')) {
+      setm.add (f [i]);
     }
-    if (lp[i].contains('PSG') {
-      setp.add(lp[i]);
+    if (z[i] == ('PSG')) {
+      setp.add (f [i]);
     }
-    if (lp[i].contains('Arsenal') {
-      seta.add(lp[i]);
+    if (z[i] == ('Arsenal')) {
+      seta.add(f [i]);
     }
   }
-  map['Barcelone']=setb;
-  map['Manchester']=setm;
-  map['PSG']=setp;
-  map['Arsenal']=seta;
+  map['Barcelone '] = setb;
+  map['\n    Manchester '] = setm;
+  map['\n    PSG '] = setp;
+  map['\n    Arsenal '] = seta;
   return map;
 }
-*/
