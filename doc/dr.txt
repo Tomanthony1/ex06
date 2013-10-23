@@ -1,1 +1,22 @@
-Merci
+ex06
+
+10/10
+
+function_arguments.dart
+->
+functions.dart
+
+define_functions.dart
+->
+context.dart
+
+bool palind (y) {
+->
+bool palind(y) {
+
+numberdays
+->
+numberDays
+
+quand il y'a return dans une fonction utiliser le type de retour de la fonction:
+Map listPlayersHome(lp) {
